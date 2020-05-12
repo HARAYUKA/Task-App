@@ -81,6 +81,15 @@ li .header-list:hover {
   color: #808080 !important;
 }
 
+li .dropdown-header {
+  background-color: rgba(200,200,200,0.5);
+  font-weight: bold;
+}
+
+#dropdown-title {
+  background-color: teal;
+}
+
 /* メインページ */
 
 .jumbotron {
@@ -92,6 +101,11 @@ li .header-list:hover {
 #top-main-title {
   font-style: italic;
   font-weight: bold;
+}
+
+/* ログインフォーム*/
+.form-control {
+  background-color: #eeeeee;
 }
 
 /* デバッグウインドウ */

@@ -16,18 +16,20 @@
   <h1>ログイン</h1>
   
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <form action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="CXJAZvwyijPX9R6H4gyi3Gs3XN/7waD254DWniamn+zu8z6ApIBAyGpXX0UHbR2nYBGwjBFe3sqMsGJOuxuJRg==" />
+    <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
 
-      <label class="label-form" for="session_email">メールアドレス</label>
-      <input class="form-control" type="email" name="session[email]" />
+      <%= f.label :メールアドレス, class: "label-login" %>
+      <%= f.email_field :email, class: 'form-control' %>
 
-      <label class="label-form" for="session_password">パスワード</label>
-      <input class="form-control" type="password" name="session[password]" />
+      <%= f.label :パスワード, class: "label-login" %>
+      <%= f.password_field :password, class: 'form-control' %>
       
-      <label class="checkbox inline checkbox-login" for="remember-me">
-        <input name="session[remember_me]" type="hidden" value="0" /><input id="remember-me" type="checkbox" value="1" name="session[remember_me]" />
+      <%= f.label :remember_me, class: "checkbox inline checkbox-login", for: "remember-me" do %>
+        <%= f.check_box :remember_me, id: "remember-me" %>
         <span>ログイン情報を記憶する</span>
-</label>
-  <%= link_to "ログイン", login_path, class: "btn btn-primary btn-block btn-form" %>
+      <% end %>
+
+      <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-login" %>
+    <% end %>
+  </div>
 </div>
