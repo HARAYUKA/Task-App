@@ -72,6 +72,28 @@ header#header{
   background-color: teal;
 }
 
+li .header-list {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+li .header-list:hover {
+  color: #808080 !important;
+}
+
+/* メインページ */
+
+.jumbotron {
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #fff;
+}
+
+#top-main-title {
+  font-style: italic;
+  font-weight: bold;
+}
+
 /* デバッグウインドウ */
 
 .debug_dump {
