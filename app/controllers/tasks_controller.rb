@@ -31,6 +31,12 @@ class TasksController < ApplicationController
     end
   end
   
+  def destroy
+    @task.destroy
+    flash[:success] = "タスクを削除しました。"
+    redirect_to user_tasks_url @user
+  end
+  
   private
   
     def task_params
