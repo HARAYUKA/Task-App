@@ -15,8 +15,12 @@ class TasksController < ApplicationController
   
   def create
     @task = @user.tasks.build(task_params)
-    @task.save
-    redirect_to user_tasks_url
+    if @task.save
+      flash[:success] = "タスクを新規作成しました。"
+      redirect_to user_tasks_url @user
+    else
+      render :new
+    end
   end
   
   def edit
