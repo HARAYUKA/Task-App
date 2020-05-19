@@ -15,3 +15,10 @@ User.create!( name: "Sample User",
                password: password,
                password_confirmation: password)
 end
+             
+@users = User.order(:created_at).take(3)
+50.times do |t|
+  task_name = Faker::Lorem.sentence
+  task_description = Faker::Lorem.sentence
+  @users.each { |user| user.tasks.create!(task_name: task_name, task_description: task_description) }
+end
